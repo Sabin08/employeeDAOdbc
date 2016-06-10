@@ -22,18 +22,57 @@ public class EmployeeDAOImpl implements EmployeeDAO{
      private DbConnection conn = new DbConnection();
 
     @Override
-    public int insert(Employee e) throws ClassNotFoundException, SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int insert(Employee emp) throws ClassNotFoundException, SQLException {
+         String sql = "INSERT into emp_details(first_name,last_name,email) VALUES(?,?,?)"; 
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            conn.open();
+            PreparedStatement stmt= conn.initStatement(sql);
+            
+            stmt.setString(1, emp.getfName());
+            stmt.setString(2, emp.getlName());
+            stmt.setString(3, emp.getEmail());
+            int result=conn.executeUpdate();
+            
+            conn.close();
+            return result;
     }
 
     @Override
-    public int update(Employee e) throws ClassNotFoundException, SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int update(Employee emp) throws ClassNotFoundException, SQLException {
+         String sql = "UPDATE emp_details set first_name=?,last_name=?,email=? WHERE id=?";
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            conn.open();
+            PreparedStatement stmt= conn.initStatement(sql);
+            stmt.setString(1, emp.getfName());
+             stmt.setString(2, emp.getlName());
+              stmt.setString(3, emp.getEmail());
+            stmt.setInt(4, emp.getId());
+           int result=stmt.executeUpdate();
+           if(result>0){
+               System.out.println("update successful");
+           }
+            
+            conn.close();
+            return result;
     }
 
     @Override
     public int delete(int id) throws ClassNotFoundException, SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "DELETE FROM emp_details WHERE id=?";
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            conn.open();
+            PreparedStatement stmt= conn.initStatement(sql);
+            stmt.setInt(1, id);
+           int result=stmt.executeUpdate();
+           if(result>0){
+               System.out.println("delete successful");
+           }
+            
+            conn.close();
+            return result;
     }
 
     @Override

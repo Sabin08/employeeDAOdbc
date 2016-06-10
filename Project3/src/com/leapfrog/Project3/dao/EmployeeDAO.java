@@ -15,9 +15,9 @@ import java.util.List;
  */
 public interface EmployeeDAO {
 
-    int insert(Employee e)throws ClassNotFoundException,SQLException;
+    int insert(Employee emp)throws ClassNotFoundException,SQLException;
 
-    int update(Employee e)throws ClassNotFoundException,SQLException;
+    int update(Employee emp)throws ClassNotFoundException,SQLException;
 
     int delete(int id)throws ClassNotFoundException,SQLException;
 
