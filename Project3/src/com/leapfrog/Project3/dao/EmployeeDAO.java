@@ -24,4 +24,6 @@ public interface EmployeeDAO {
     Employee searchById(int id)throws ClassNotFoundException,SQLException;
 
     List<Employee> showAll()throws ClassNotFoundException,SQLException;
+    
+    boolean isEmailExist(String param)throws ClassNotFoundException,SQLException;
 }

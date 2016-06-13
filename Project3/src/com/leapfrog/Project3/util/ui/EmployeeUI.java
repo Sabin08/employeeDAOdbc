@@ -17,7 +17,8 @@ import javax.swing.JOptionPane;
  */
 public class EmployeeUI extends javax.swing.JFrame {
 
-     EmployeeDAO empdao=new EmployeeDAOImpl();
+    EmployeeDAO empdao = new EmployeeDAOImpl();
+
     /**
      * Creates new form EmployeeUI
      */
@@ -43,85 +44,108 @@ public class EmployeeUI extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        update = new javax.swing.JButton();
+        search = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 0, 0));
+        getContentPane().setLayout(null);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jLabel1.setText("First Name");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 83, 105, 20);
 
+        jTextField1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(150, 80, 130, 20);
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jLabel2.setText("Last Name");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 116, 105, 22);
 
+        jTextField2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(150, 120, 130, 20);
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jLabel3.setText("Email");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 150, 105, 22);
 
+        jTextField3.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(149, 151, 130, 20);
+
+        jButton1.setBackground(new java.awt.Color(255, 255, 0));
+        jButton1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(51, 0, 51));
         jButton1.setText("INSERT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(297, 48, 90, 23);
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 51, 51));
         jLabel4.setText("id");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, 48, 90, 22);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                                .addComponent(jTextField4)))))
-                .addGap(0, 121, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(92, Short.MAX_VALUE))
-        );
+        jTextField4.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(149, 49, 130, 20);
+
+        jButton2.setBackground(new java.awt.Color(255, 51, 51));
+        jButton2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(51, 51, 0));
+        jButton2.setText("DELETE");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(297, 116, 90, 23);
+
+        update.setBackground(new java.awt.Color(0, 204, 0));
+        update.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        update.setForeground(new java.awt.Color(0, 51, 51));
+        update.setText("UPDATE");
+        update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateActionPerformed(evt);
+            }
+        });
+        getContentPane().add(update);
+        update.setBounds(297, 82, 90, 23);
+
+        search.setBackground(new java.awt.Color(0, 0, 255));
+        search.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        search.setForeground(new java.awt.Color(51, 51, 0));
+        search.setText("SEARCH");
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
+        getContentPane().add(search);
+        search.setBounds(297, 150, 90, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -135,15 +159,62 @@ public class EmployeeUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try{
-           int result= empdao.insert(new Employee(0, jTextField2.getText(), jTextField3.getText(), jTextField4.getText()));
-        if(result>0){
-            JOptionPane.showMessageDialog(null,"inserted successfully");
-        }
-        }catch (ClassNotFoundException | SQLException ce) {
-            JOptionPane.showMessageDialog(null,ce.getMessage());
+        try {
+            if(!empdao.isEmailExist(jTextField3.getText())){
+            int result = empdao.insert(new Employee(0, jTextField1.getText(), jTextField2.getText(), jTextField3.getText()));
+            if (result > 0) {
+                JOptionPane.showMessageDialog(null, "inserted successfully");
+            }
+          empdao.isEmailExist(jTextField3.getText());
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "already exists");
+                jTextField3.setText(null);
+            }
+          
+          
+        } catch (ClassNotFoundException | SQLException ce) {
+            JOptionPane.showMessageDialog(null, ce.getMessage());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            empdao.delete(Integer.parseInt(jTextField4.getText()));
+            JOptionPane.showMessageDialog(null, "deleted successfully");
+        } catch (ClassNotFoundException | SQLException ce) {
+            JOptionPane.showMessageDialog(null, ce.getMessage());
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+      try{
+           empdao.update(new Employee(Integer.parseInt(jTextField4.getText()),jTextField1.getText(), jTextField2.getText(), jTextField3.getText()));
+           JOptionPane.showMessageDialog(null, "update successful");
+           
+           
+        } catch (ClassNotFoundException | SQLException ce) {
+            JOptionPane.showMessageDialog(null, ce.getMessage());
+        }
+        
+       
+    }//GEN-LAST:event_updateActionPerformed
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+       try{
+         Employee e= empdao.searchById(Integer.parseInt(jTextField4.getText()));
+            if (!e.equals(null)) {
+                JOptionPane.showMessageDialog(null, "Data Found");
+                jTextField1.setText(e.getfName());
+                jTextField2.setText(e.getlName());
+                jTextField3.setText(e.getEmail());
+            }
+         
+         
+         } catch (ClassNotFoundException | SQLException ce) {
+            JOptionPane.showMessageDialog(null, ce.getMessage());
+        }
+    }//GEN-LAST:event_searchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,6 +253,7 @@ public class EmployeeUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -190,5 +262,7 @@ public class EmployeeUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton search;
+    private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

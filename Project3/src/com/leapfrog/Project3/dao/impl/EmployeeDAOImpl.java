@@ -118,5 +118,21 @@ public class EmployeeDAOImpl implements EmployeeDAO{
             conn.close();
             return empList;
     }
+
+    @Override
+    public boolean isEmailExist(String param) throws ClassNotFoundException, SQLException {
+         Boolean found = false;
+        conn.open();
+        String sql = "select * from emp_details where email=?";
+        PreparedStatement stmt = conn.initStatement(sql);
+        stmt.setString(1, param);
+        ResultSet rs = conn.executeQuery();
+        while (rs.next()) {
+            found = true;
+
+        }
+        conn.close();
+        return found;
+    }
     
 }
